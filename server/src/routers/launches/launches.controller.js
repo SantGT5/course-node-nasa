@@ -6,7 +6,23 @@ function HttpGetAllLaunches(req, res) {
 
 function httpAddNewLaunch(req, res) {
     const launch = req.body;
+
+    if (
+        !launch.mission.trim() ||
+        !launch.rocket.trim() ||
+        !launch.launchDate.trim() ||
+        !launch.destination.trim()
+    ) {
+        res.status(400).json({
+            error: 'Mission required launch property',
+        });
+        return;
+    }
+
     launch.launchDate = new Date(launch.launchDate);
+    if (isNaN(launch.launchDate)) {
+        return res.status(400).json({ error: 'Invalid launch date.' });
+    }
 
     addNewLaunch(launch);
 
