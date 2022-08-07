@@ -3,8 +3,8 @@ const express = require('express');
 const planetsRouter = express.Router();
 
 // Fetch data from API ->
-const { getAllPlanets } = require('./planets.controller');
+const { HttpGetAllPlanets } = require('./planets.controller');
 
-planetsRouter.get('/planets', getAllPlanets);
+planetsRouter.get('/planets', HttpGetAllPlanets);
 
 module.exports = planetsRouter;
