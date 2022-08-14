@@ -19,7 +19,7 @@ function httpAddNewLaunch(req, res) {
         !launch.target
     ) {
         res.status(400).json({
-            error: 'Mission required launch property',
+            error: 'Missing required launch property',
         });
         return;
     }
@@ -37,7 +37,7 @@ function httpAddNewLaunch(req, res) {
 
 function httpAbortLaunch(req, res) {
     const { id } = req.params;
-    
+
     if (!existsLaunchWithId(Number(id))) {
         return res.status(404).json({
             error: 'Launch not found',
