@@ -5,6 +5,6 @@ const planetsRouter = express.Router();
 // Fetch data from API ->
 const { HttpGetAllPlanets } = require('./planets.controller');
 
-planetsRouter.get('/planets', HttpGetAllPlanets);
+planetsRouter.get('/', HttpGetAllPlanets);
 
 module.exports = planetsRouter;
