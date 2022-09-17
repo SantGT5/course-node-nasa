@@ -2,6 +2,8 @@
 // Using HTTP we can use different response, for example WebSocket && HTTP response
 const http = require('http');
 
+require('dotenv').config();
+
 // MongoDB
 const { mongoConnect } = require('./services/mongo');
 
