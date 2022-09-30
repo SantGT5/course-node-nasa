@@ -7,7 +7,7 @@
     "test": "jest",
     "test-watch": "jest --watch",
     "dev": "nodemon server/src/server.js",
-    "start": "PORT=5000 node server/src/server.js",
+    "start": "PORT=8000 node server/src/server.js",
     "cluster": "pm2 start server/src/server.js -i max",
     "format": "prettier --write './server/src/**/*'"
   },
